@@ -8,6 +8,8 @@ use App\Models\Admin\Contact;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 
 class ContactController extends Controller
 {
@@ -26,10 +28,10 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreContactRequest $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param StoreContactRequest $request
+     * @return RedirectResponse
      */
-    public function store(StoreContactRequest $request)
+    public function store(StoreContactRequest $request): RedirectResponse
     {
         $contact = new Contact([
             'surname' => $request->get('surname'),
@@ -45,11 +47,13 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Admin\Contact $contact
-     * @return \Illuminate\Http\Response
+     * @param Contact $contact
+     * @return RedirectResponse
      */
-    public function destroy(Contact $contact)
+    public function destroy(Contact $contact): RedirectResponse
     {
-        //
+        $contact->delete();
+        $successDelete = 'The item was deleted successfully';
+        return redirect()->back()->with('successDelete',$successDelete);
     }
 }

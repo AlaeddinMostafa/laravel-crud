@@ -5,6 +5,7 @@
 @section('content')
     <div class="container">
         <div class="row">
+            @include('message.message')
             <div class="col-xl-3"></div>
             <div class="col-xl-9 my-5 shadow p-4 box-shadow-custom">
                 <form action="{{ route('contact.store') }}" method="post" role="form">

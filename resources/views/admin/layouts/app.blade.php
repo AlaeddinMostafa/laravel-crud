@@ -15,9 +15,11 @@
             src='https://cdn.jsdelivr.net/npm/froala-editor@4.0.10/js/froala_editor.pkgd.min.js'></script>
 
     <link href="{{ asset('/admin/css/styles.css') }}" rel="stylesheet"/>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="sb-nav-fixed">
 @include('admin/layouts/header')
+@include('message.message')
 <div id="layoutSidenav">
     @include('admin/layouts/layoutSidenav_nav')
     <div id="layoutSidenav_content">

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('/Frontend/assets/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('/Frontend/assets/css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('/Frontend/assets/css/swiper.css') }}">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('css')
 </head>
 <body>
