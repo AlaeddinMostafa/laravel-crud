@@ -43,13 +43,15 @@ header nav #right-navigation ul li a {
 }
 
 .background-image {
-  background-image: url("../img/about/banner.jpg");
+  /*background-image: url("../img/about/banner.jpg");*/
+    background-position: bottom;
   width: 99%;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
+
 }
 .background-image h4 {
   color: white;

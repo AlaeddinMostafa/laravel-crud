@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Admin\About;
 use App\Models\Admin\Blog;
 use App\Models\Admin\Slider;
 use Illuminate\Contracts\Foundation\Application;
@@ -23,12 +24,19 @@ class ClientController extends Controller
         return view('index',compact('sliders','blogs','blogLastPosts'));
     }
 
-    public function about()
+    /**
+     * @return Factory|View|Application
+     */
+    public function about(): Factory|View|Application
     {
-        return view('about');
+        $abouts = About::query()->orderBy('id','desc')->where('id','=',1)->get();
+        return view('about',compact('abouts'));
     }
 
-    public function contact()
+    /**
+     * @return Factory|View|Application
+     */
+    public function contact(): Factory|View|Application
     {
         return view('contact');
     }
