@@ -37,7 +37,7 @@ class NewsletterController extends Controller
         ]);
         $newsletter->save();
         $successNewsletter = 'You have successfully subscribed to the blog newsletter.';
-        return redirect()->back()->with('successNewsletter',$successNewsletter);
+        return redirect()->back()->with('success',$successNewsletter);
     }
 
     /**
@@ -50,6 +50,6 @@ class NewsletterController extends Controller
     {
         $newsletter->delete();
         $successNewsletter = 'The subscriber was removed from the newsletter';
-        return redirect()->back()->with('successNewsletter',$successNewsletter);
+        return redirect()->back()->with('success',$successNewsletter);
     }
 }

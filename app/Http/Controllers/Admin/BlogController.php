@@ -107,7 +107,7 @@ class BlogController extends Controller
         }
         $blog->save();
         $successBlog = 'Blog post editing was done correctly';
-        return redirect()->route('blog.index')->with('successBlog', $successBlog);
+        return redirect()->route('blog.index')->with('success', $successBlog);
     }
 
     /**
@@ -120,6 +120,6 @@ class BlogController extends Controller
     {
         $blog->delete();
         $successBlog = 'The desired post was deleted correctly';
-        return redirect()->route('blog.index')->with('successBlog', $successBlog);
+        return redirect()->route('blog.index')->with('success', $successBlog);
     }
 }

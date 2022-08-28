@@ -59,7 +59,7 @@ class AboutController extends Controller
         ]);
         $about->save();
         $successAbout = 'The desired page was created correctly';
-        return redirect()->route('about.index')->with('successAbout', $successAbout);
+        return redirect()->route('about.index')->with('success', $successAbout);
     }
 
 
@@ -117,7 +117,7 @@ class AboutController extends Controller
         }
         $about->save();
         $successBlog = 'Blog post editing was done correctly';
-        return redirect()->route('about.index')->with('successBlog', $successBlog);
+        return redirect()->route('about.index')->with('success', $successBlog);
     }
 
 

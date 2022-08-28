@@ -57,16 +57,6 @@ class SliderController extends Controller
         return redirect()->route('slider.index')->with('success', $successSlider);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param Slider $slider
-     * @return Response
-     */
-    public function show(Slider $slider)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -106,7 +96,7 @@ class SliderController extends Controller
         }
         $slider->save();
         $successSlider = 'Slider image editing was done correctly';
-        return redirect()->route('slider.index')->with('successSlider', $successSlider);
+        return redirect()->route('slider.index')->with('success', $successSlider);
     }
 
     /**
@@ -119,6 +109,6 @@ class SliderController extends Controller
     {
         $slider->delete();
         $successSlider = 'The slider image was removed correctly';
-        return redirect()->route('slider.index')->with('successSlider', $successSlider);
+        return redirect()->route('slider.index')->with('success', $successSlider);
     }
 }

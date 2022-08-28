@@ -41,7 +41,7 @@ class ContactController extends Controller
         ]);
         $contact->save();
         $successContact = 'Your message has been saved correctly and has been received by the management. You will be contacted as soon as possible';
-        return redirect()->back()->with('successContact',$successContact);
+        return redirect()->back()->with('success',$successContact);
     }
 
     /**
@@ -54,6 +54,6 @@ class ContactController extends Controller
     {
         $contact->delete();
         $successDelete = 'The item was deleted successfully';
-        return redirect()->back()->with('successDelete',$successDelete);
+        return redirect()->back()->with('success',$successDelete);
     }
 }
