@@ -61,7 +61,7 @@
                 </a>
 
                 {{-- aboutpage --}}
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ route('about.index') }}">
                     <div class="sb-nav-link-icon">
                         <i class="fa fa-users" aria-hidden="true"></i>
                     </div>

@@ -16,4 +16,16 @@ class About extends Model
     private mixed $phone;
     private mixed $email;
     private mixed $telegram;
+
+
+    protected $fillable = [
+            'title',
+            'banner',
+            'image',
+            'description',
+            'phone',
+            'email',
+            'telegram',
+    ];
+
 }

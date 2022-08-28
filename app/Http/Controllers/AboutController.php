@@ -36,15 +36,16 @@ class AboutController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreAboutRequest $request
+     * @param StoreAboutRequest $request
      * @return RedirectResponse
      */
     public function store(StoreAboutRequest $request): RedirectResponse
     {
-        $AboutBannerImage = 'banner' . '-' . time() . '.' . $request->image->getClientOriginalExtension();
-        $request->image->move('gallery/about/', $AboutBannerImage);
 
-        $AboutImage = 'blog' . '-' . time() . '.' . $request->image->getClientOriginalExtension();
+        $AboutBannerImage = 'banner' . '-' . time() . '.' . $request->banner->getClientOriginalExtension();
+        $request->banner->move('gallery/about/', $AboutBannerImage);
+
+        $AboutImage = 'image' . '-' . time() . '.' . $request->image->getClientOriginalExtension();
         $request->image->move('gallery/about/', $AboutImage);
 
         $about = new About([
@@ -116,7 +117,7 @@ class AboutController extends Controller
         }
         $about->save();
         $successBlog = 'Blog post editing was done correctly';
-        return redirect()->route('blog.index')->with('successBlog', $successBlog);
+        return redirect()->route('about.index')->with('successBlog', $successBlog);
     }
 
 
